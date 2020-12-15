@@ -24,7 +24,6 @@ namespace SourceControlFinalAssignment.Models
         [MaxLength(50)]
         public string EmailId { get; set; }
         [DataType(DataType.Password)]
-
         public string Password { get; set; }
         [Required(ErrorMessage = "Please Enter the Age")]
         [Range(18, 65, ErrorMessage = "Age must be between 18-65 in years.")]
@@ -39,10 +38,10 @@ namespace SourceControlFinalAssignment.Models
     }
     public partial class LoginViewModel
     {
-       
-        
+        [Required]
+        [EmailAddress]
         public string EmailId { get; set; }
-       
+        [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
     }

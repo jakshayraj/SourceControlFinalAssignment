@@ -36,6 +36,7 @@ namespace SourceControlFinalAssignment.Controllers
                         {
                             FormsAuthentication.SetAuthCookie(obj.Name.ToString(), false);
                             Session["UserID"] = obj.Id;
+                            Session["Image"] = obj.Image;
                             Log.Info("Login Successffuly");
                             return this.RedirectToAction("Details");
                         }
@@ -84,6 +85,7 @@ namespace SourceControlFinalAssignment.Controllers
                         Log.Info("Signup Successffuly");
                         ModelState.Clear();
                         Session["UserID"] = user.Id;
+                        Session["Image"] = user.Image;
                         return RedirectToAction("Details", "Home");
                     }
                 }
